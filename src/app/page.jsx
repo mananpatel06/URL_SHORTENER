@@ -1,4 +1,4 @@
-"use server"
+
 import Form from "@/components/form";
 import Table from "@/components/table";
 
