@@ -6,7 +6,6 @@ import React, { useState } from "react";
 
 const LinksCopy = ({ u }) => {
   const router = useRouter();
-  router.refresh();
   return (
     <div className="flex gap-5 p-2 h-15 bg-neutral-700 rounded-lg max-sm:flex-col max-sm:w-[300px] max-sm:h-[200px] max-sm:overflow-auto ">
       <span className="flex w-[500px] overflow-x-hidden overflow-y-scrool justify-start cursor-pointer">
