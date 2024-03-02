@@ -46,7 +46,6 @@ export const getAllUrl = async () => {
     try {
         connectToDb(); 
         const url = await ShortUrl.find();
-        revalidatePath("/");
         return url; 
     } catch (error) {
         // console.log(error);
