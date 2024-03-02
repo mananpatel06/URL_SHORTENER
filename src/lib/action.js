@@ -33,6 +33,7 @@ export const addUrl = async(e) =>{
         if (url == null){ return {notFound: true}}
         url.clicks++;
         url.save();
+        revalidatePath("/");
         return url; 
     } catch (error) {
         // console.log(error);
