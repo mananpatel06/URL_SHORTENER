@@ -1,4 +1,4 @@
-"use server"
+
 import { deleteUrl, getAllUrl } from '@/lib/action';
 import React from 'react'
 import LinksCopy from './links';
