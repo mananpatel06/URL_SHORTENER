@@ -27,6 +27,7 @@ export const addUrl = async(e) =>{
 
 
   export const getFullUrl = async (short) => {
+    "use server"
     try {
         connectToDb(); 
         const url = await ShortUrl.findOne({short:short});

@@ -1,10 +1,18 @@
 "use client"
 import { addUrl } from '@/lib/action';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Form = () => {
 
     const [input, setInput] = useState('');
+    const [click, setclick] = useState(false);
+    useEffect(() => {
+      setTimeout(() => {
+        setInput('');
+        setclick(false);
+      }, 500);
+    }, [click])
+    
 
   return (
     <form action={addUrl} className=" flex gap-3">
@@ -18,6 +26,7 @@ const Form = () => {
         <button
           type="submit"
           className=" bg-blue-700 text-white rounded-xl p-2"
+          onClick={()=>setclick(!click)}
         >
           Shrink
         </button>
