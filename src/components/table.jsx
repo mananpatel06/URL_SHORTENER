@@ -1,17 +1,15 @@
-"use server"
 import { deleteUrl, getAllUrl } from '@/lib/action';
-import React from 'react'
 import LinksCopy from './links';
 import Link from 'next/link';
 
-const Table = async() => {
+const Table = async () => {
 
-  let urls = await getAllUrl();
   
+  let url = JSON.parse(await getAllUrl());
   
   return (
     <div>
-      {urls.map((u, i) => (
+      {url && url.map((u, i) => (
           <div
             key={i}
             className="text-white text-xl  m-2 text-pretty flex gap-5 "
@@ -29,8 +27,8 @@ const Table = async() => {
         {u.short}
         </Link>
       </span>
-      <span className=" w-[100px] ">{u.clicks}</span>
-      <LinksCopy u={JSON.parse(JSON.stringify(u))} />
+      {/* <span className=" w-[100px] ">{u.clicks}</span> */}
+      <LinksCopy u={JSON.parse(JSON.stringify(u))} i={i} />
     </div>
           </div>
         ))}

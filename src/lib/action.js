@@ -47,7 +47,7 @@ export const getAllUrl = async () => {
     try {
         connectToDb(); 
         const url = await ShortUrl.find();
-        return url; 
+        return JSON.stringify(url); 
     } catch (error) {
         // console.log(error);
         throw new Error("failed to fetch URL !!")
