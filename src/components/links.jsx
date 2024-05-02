@@ -19,7 +19,7 @@ const LinksCopy = ({ u,i }) => {
     
     <button
         className=" bg-red-500 rounded-lg p-1"
-        onClick={() => deleteUrl(data._id)}
+        onClick={() => deleteUrl(u._id)}
         >
         Delete
       </button> 
