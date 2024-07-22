@@ -1,6 +1,5 @@
 "use client";
 import { deleteUrl, getAllUrl } from "@/lib/action";
-import LinksCopy from "./links";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "@/context/DataProvider";
