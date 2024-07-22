@@ -1,18 +1,23 @@
 "use client"
+import { DataContext } from '@/context/DataProvider';
 import { addUrl } from '@/lib/action';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 const Form = () => {
 
     const [input, setInput] = useState('');
     const [click, setclick] = useState(false);
+    const {data,Loading,fetchData} = useContext(DataContext);
+
+
     useEffect(() => {
       setTimeout(() => {
         setInput('');
         setclick(false);
+        fetchData();
       }, 500);
     }, [click])
-    
+
 
   return (
     <form action={addUrl} className=" flex gap-3">
@@ -25,8 +30,8 @@ const Form = () => {
         />
         <button
           type="submit"
-          className=" bg-blue-700 text-white rounded-xl p-2"
-          onClick={()=>setclick(!click)}
+          className="bg-blue-700 text-white rounded-xl p-2 active:bg-blue-800 active:ring-4 active:ring-blue-800 active:ring-offset-1"
+          onClick={()=>{setclick(true);}}
         >
           Shrink
         </button>

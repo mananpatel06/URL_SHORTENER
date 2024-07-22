@@ -16,6 +16,9 @@ const shortUrlSchema = new Schema({
     required: true,
     default: 0,
   },
+  visitHistory: [{
+    timestamp:{type: Number},
+  }]
 });
 
 export const ShortUrl = mongoose.models?.ShortUrl || mongoose.model("ShortUrl",shortUrlSchema);

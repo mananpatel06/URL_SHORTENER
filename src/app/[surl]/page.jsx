@@ -1,17 +1,32 @@
-"use server"
-import { getFullUrl } from '@/lib/action';
-import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
+"use client";
+import { getFullUrl } from "@/lib/action";
+import { useParams, useRouter } from "next/navigation";
+import {  useEffect, useState } from "react";
 
-const ShortId = async({params}) => {
+const ShortId = () => {
+
+  const [url, setUrl] = useState(null);
+  const router = useRouter()
+  const params = useParams()
+
+  useEffect(() => {
+    const fetch = async () =>{
+    const newData = await getFullUrl(params.surl)
+    setUrl(JSON.parse(newData));
+  }
+
+    fetch();
+  }, [])
+  
+  if (url === null) {    
     
-        const { surl } = params;
-        const url = await getFullUrl(surl);
-        redirect(url.full);
- 
-  return (
-    <div>Loading...</div>
-  )
-}
+    return <div className="w-full bg-neutral-800 h-screen flex flex-col items-center justify-center text-white text-6xl font-mono">Loading...</div>;
+  }
+  else{
+    router.replace(url.full);
+  }
 
-export default ShortId
+  
+};
+
+export default ShortId;
