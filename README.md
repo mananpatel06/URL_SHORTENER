@@ -1,5 +1,10 @@
 [Demo Link](https://url-shortener-manan.vercel.app/)
 
+![Screenshot 2024-07-22 123101](https://github.com/user-attachments/assets/84e2bcf1-f9c9-4f93-a8dc-46b3f942763e)
+
+![Screenshot 2024-07-22 123118](https://github.com/user-attachments/assets/b4d5a6b8-cccb-4b43-8fa9-69993b70d175)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
