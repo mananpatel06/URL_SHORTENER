@@ -20,7 +20,7 @@ const Form = () => {
 
 
   return (
-    <form action={addUrl} className=" flex gap-3">
+    <form action={addUrl} className="lg:flex-row gap-3 max-w-screen flex flex-col ">
         <input
           name="myInput"
           value={input}
@@ -30,7 +30,7 @@ const Form = () => {
         />
         <button
           type="submit"
-          className="bg-blue-700 text-white rounded-xl p-2 active:bg-blue-800 active:ring-4 active:ring-blue-800 active:ring-offset-1"
+          className=" bg-blue-700 text-white rounded-xl p-2 active:bg-blue-800 active:ring-4 active:ring-blue-800 active:ring-offset-1"
           onClick={()=>{setclick(true);}}
         >
           Shrink
